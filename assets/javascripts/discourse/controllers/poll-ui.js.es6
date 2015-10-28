@@ -14,16 +14,6 @@ export default Ember.Controller.extend(ModalFunctionality, {
 
   actions: {
     apply: function() {
-      var selectedMeme = this.get("selectedMeme"),
-          topText = this.get("topText"), bottomText = this.get("bottomText"),
-          self = this;
-      Discourse.ajax(this.getUrl("caption_image") + "&template_id=" + selectedMeme +
-        "&text0=" + topText + "&text1=" + bottomText).then(
-          function(resp) {
-            self.composerView.addMarkdown("![](" + resp.data.url + ")");
-          }.bind(this)
-      );
-      this.set("selectedMeme", undefined);
       this.send('closeModal');
     }
   },
