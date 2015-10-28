@@ -2,22 +2,22 @@
   <div class="details">
     <table>
       <tbody>
-        <tr class="common">
+        <tr>
           <td>{{i18n "poll_ui.poll_name_label"}}</td>
           <td>{{text-field id="poll-name" value=controller.pollName placeholderKey="poll_ui.poll_name_placeholder" }}</td>
           <td>{{i18n "poll_ui.poll_min_label" }}</td>
-          <td>{{text-field id="poll-min-value" value=controller.pollMinValue placeholderKey="poll_ui.poll_min_placeholder" maxlength="3" }}</td>
+          <td class="numeric-field">{{text-field id="poll-min-value" value=controller.pollMinValue placeholderKey="poll_ui.poll_min_placeholder" maxlength="3" }}</td>
         </tr>
-        <tr class="options">
+        <tr>
           <td>{{i18n "poll_ui.poll_type_label"}}</td>
           <td>{{combo-box name="poll-type" valueAttribute="title" value=controller.pollType
             nameProperty="title" content=pollTypes }}</td>
           <td>{{i18n "poll_ui.poll_max_label" }}</td>
-          <td>{{text-field id="poll-max-value" value=controller.pollMaxValue placeholderKey="poll_ui.poll_max_placeholder" maxlength="3" }}</td>
+          <td class="numeric-field">{{text-field id="poll-max-value" value=controller.pollMaxValue placeholderKey="poll_ui.poll_max_placeholder" maxlength="3" }}</td>
         </tr>
         <tr class="number-options">
           <td>{{i18n "poll_ui.poll_step_label" }}</td>
-          <td>{{text-field id="poll-step-value" value=controller.pollStepValue placeholderKey="poll_ui.poll_step_placeholder" maxlength="3" }}</td>
+          <td class="numeric-field">{{text-field id="poll-step-value" value=controller.pollStepValue placeholderKey="poll_ui.poll_step_placeholder" maxlength="3" }}</td>
         </tr>
       </tbody>
     </table>
