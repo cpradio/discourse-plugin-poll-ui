@@ -3,6 +3,9 @@
 }
 
 .pollui-modal {
+  table {
+    width: 100%;
+  }
   .poll-options input, .poll-number-options input {
     width: 3em;
   }
