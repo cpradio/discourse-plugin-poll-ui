@@ -1,4 +1,4 @@
 plugins:
-  poll-ui_enabled:
+  poll_ui_enabled:
     default: true
     client: true
