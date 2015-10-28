@@ -6,13 +6,12 @@
   table {
     width: 100%;
 
-    td:nth-child(even) {
-      text-align: right;
+    td {
+      padding: 0 .5em;
     }
 
-    input {
-      margin-right: 1em;
-      width: 90%;
+    td:nth-child(even) {
+      text-align: right;
     }
 
     .options input, .number-options input {
