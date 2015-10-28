@@ -1,0 +1,15 @@
+.wmd-pollui-button:before {
+  content: "\f0ca"
+}
+
+.pollui-modal {
+  .pollui-poll-number-options {
+    display: none;
+  }
+  .pollui-content {
+    max-height: 335px;
+    min-height: 200px;
+    overflow-y: scroll;
+    clear: both;
+  }
+}
