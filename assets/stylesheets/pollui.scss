@@ -3,10 +3,13 @@
 }
 
 .pollui-modal {
-  .pollui-poll-number-options {
+  .poll-options input, .poll-number-options input {
+    width: 3em;
+  }
+  .poll-number-options {
     display: none;
   }
-  .pollui-content {
+  .content {
     max-height: 335px;
     min-height: 200px;
     overflow-y: scroll;
