@@ -1,6 +1,6 @@
 en:
   js:
-    poll-ui:
+    poll_ui:
       composer_button_text: "Insert Poll"
       modal_title: "Insert Poll"
       poll_name_label: "Name:"
