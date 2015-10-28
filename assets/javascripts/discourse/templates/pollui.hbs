@@ -1,18 +1,18 @@
 <div class="modal-body pollui-modal" style="overflow: visible">
   <div class="pollui-poll-options">
-    {{il8n "pollui.poll_name_label"}}
+    {{i18n "pollui.poll_name_label"}}
     {{text-field id="poll-name" value=controller.pollName placeholderKey="pollui.poll_name_placeholder" }}
-    {{il8n "pollui.poll_type_label"}}
+    {{i18n "pollui.poll_type_label"}}
     {{combo-box name="poll-type" valueAttribute="title" value=controller.pollType
       nameProperty="title" content=pollTypes }}
     <div class="pollui-poll-options">
-      {{il8n "pollui.poll_min_label" }}
+      {{i18n "pollui.poll_min_label" }}
       {{text-field id="poll-min-value" value=controller.pollMinValue placeholderKey="pollui.poll_min_placeholder" }}
-      {{il8n "pollui.poll_max_label" }}
+      {{i18n "pollui.poll_max_label" }}
       {{text-field id="poll-max-value" value=controller.pollMaxValue placeholderKey="pollui.poll_max_placeholder" }}
     </div>
     <div class="pollui-poll-number-options">
-      {{il8n "pollui.poll_step_label" }}
+      {{i18n "pollui.poll_step_label" }}
       {{text-field id="poll-step-value" value=controller.pollStepValue placeholderKey="pollui.poll_step_placeholder" }}
     </div>
   </div>

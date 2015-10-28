@@ -2,13 +2,13 @@
 This plugin adds support for inserting a poll into the composer window via a UI.
 
 Composer Window Button
-![](https://raw.githubusercontent.com/cpradio/discourse-plugin-pollui/master/screenshot-composer.png)
+![](https://raw.githubusercontent.com/cpradio/discourse-plugin-poll-ui/master/screenshot-composer.png)
 
 Admin Settings
-![](https://raw.githubusercontent.com/cpradio/discourse-plugin-pollui/master/screenshot-admin-settings.png)
+![](https://raw.githubusercontent.com/cpradio/discourse-plugin-poll-ui/master/screenshot-admin-settings.png)
 
 In Action
-![](https://raw.githubusercontent.com/cpradio/discourse-plugin-pollui/master/screenshot-action.gif)
+![](https://raw.githubusercontent.com/cpradio/discourse-plugin-poll-ui/master/screenshot-action.gif)
 
 ## How to Help
 
