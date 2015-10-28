@@ -5,12 +5,12 @@
 .pollui-modal {
   table {
     width: 100%;
-  }
-  .poll-options input, .poll-number-options input {
-    width: 3em;
-  }
-  .poll-number-options {
-    display: none;
+    .options input, .number-options input {
+      width: 3em;
+    }
+    .number-options {
+      display: none;
+    }
   }
   .content {
     max-height: 335px;

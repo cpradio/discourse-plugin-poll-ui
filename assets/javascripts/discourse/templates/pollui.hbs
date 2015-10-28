@@ -2,37 +2,25 @@
   <div class="details">
     <table>
       <tbody>
-        <tr>
+        <tr class="common">
           <td>{{i18n "pollui.poll_name_label"}}</td>
           <td>{{text-field id="poll-name" value=controller.pollName placeholderKey="pollui.poll_name_placeholder" }}</td>
           <td>{{i18n "pollui.poll_type_label"}}</td>
           <td>{{combo-box name="poll-type" valueAttribute="title" value=controller.pollType
             nameProperty="title" content=pollTypes }}</td>
         </tr>
+        <tr class="options">
+          <td>{{i18n "pollui.poll_min_label" }}</td>
+           <td>{{text-field id="poll-min-value" value=controller.pollMinValue placeholderKey="pollui.poll_min_placeholder" maxlength="3" }}</td>
+          <td>{{i18n "pollui.poll_max_label" }}</td>
+          <td>{{text-field id="poll-max-value" value=controller.pollMaxValue placeholderKey="pollui.poll_max_placeholder" maxlength="3" }}</td>
+        </tr>
+        <tr class="number-options">
+          <td>{{i18n "pollui.poll_step_label" }}</td>
+          <td>{{text-field id="poll-step-value" value=controller.pollStepValue placeholderKey="pollui.poll_step_placeholder" maxlength="3" }}</td>
+        </tr>
       </tbody>
     </table>
-    <div class="poll-options">
-      <table>
-        <tbody>
-          <tr>
-            <td>{{i18n "pollui.poll_min_label" }}</td>
-            <td>{{text-field id="poll-min-value" value=controller.pollMinValue placeholderKey="pollui.poll_min_placeholder" maxlength="3" }}</td>
-            <td>{{i18n "pollui.poll_max_label" }}</td>
-            <td>{{text-field id="poll-max-value" value=controller.pollMaxValue placeholderKey="pollui.poll_max_placeholder" maxlength="3" }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="poll-number-options">
-      <table>
-        <tbody>
-          <tr>
-            <td>{{i18n "pollui.poll_step_label" }}</td>
-            <td>{{text-field id="poll-step-value" value=controller.pollStepValue placeholderKey="pollui.poll_step_placeholder" maxlength="3" }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
   </div>
   <div class="content">
     <table>
