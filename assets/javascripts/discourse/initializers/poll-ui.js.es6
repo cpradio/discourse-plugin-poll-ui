@@ -4,14 +4,14 @@ import ComposerView from 'discourse/views/composer';
 
 export default
 {
-  name: 'pollui',
+  name: 'poll-ui',
   initialize()
   {
     ApplicationRoute.reopen({
       actions: {
-        showPollUI: function (composerView) {
-          showModal('pollui');
-          this.controllerFor('pollui').setProperties({composerView: composerView});
+        showpoll-ui: function (composerView) {
+          showModal('poll-ui');
+          this.controllerFor('poll-ui').setProperties({composerView: composerView});
         }
       }
     });
@@ -20,12 +20,12 @@ export default
       initEditor: function () {
         // overwrite and wrap.
         this._super();
-        if (Discourse.SiteSettings.pollui_enabled) {
+        if (Discourse.SiteSettings.poll-ui_enabled) {
           var view = this;
-          var button_text = I18n.t("pollui.composer_button_text");
-          var btn = $('<button class="wmd-button wmd-pollui-button" title="' + button_text + '" aria-label="' + button_text + '"></button>');
+          var button_text = I18n.t("poll-ui.composer_button_text");
+          var btn = $('<button class="wmd-button wmd-poll-ui-button" title="' + button_text + '" aria-label="' + button_text + '"></button>');
           btn.click(function () {
-            view.get("controller").send("showPollUI", view);
+            view.get("controller").send("showpoll-ui", view);
           });
           $("#wmd-button-row,.wmd-button-row").append(btn);
         }

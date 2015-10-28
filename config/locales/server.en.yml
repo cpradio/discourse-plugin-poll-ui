@@ -1,3 +1,3 @@
 en:
   site_settings:
-    pollui_enabled: 'Show Insert Poll button on composer window?'
+    poll-ui_enabled: 'Show Insert Poll button on composer window?'
