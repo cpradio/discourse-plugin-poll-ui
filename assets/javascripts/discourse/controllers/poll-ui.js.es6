@@ -12,11 +12,11 @@ export default Ember.Controller.extend(ModalFunctionality, {
     { 'title': I18n.t("poll_ui.poll_type.number") }
   ],
 
-  isNumberPoll: function(){
+  isNumberPoll: function() {
     return this.get("pollType") == I18n.t("poll_ui.poll_type.number");
   }.property("pollType"),
 
-  isMultipleOrNumberPoll: function(){
+  isMultipleOrNumberPoll: function() {
     return this.get("pollType") == I18n.t("poll_ui.poll_type.multiple")
         || this.get("pollType") == I18n.t("poll_ui.poll_type.number");
   }.property("pollType"),

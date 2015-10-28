@@ -15,9 +15,9 @@
       <tbody>
         {{#if isMultipleOrNumberPoll}}
         <tr>
-          <td>{{i18n "poll_ui.poll_min_label" }}</td>
+          <td>{{#if isNumberPoll}}{{i18n "poll_ui.poll_min_numeric_label" }}{{else}}{{i18n "poll_ui.poll_min_multiple_label" }}{{/if}}</td>
           <td class="numeric-field">{{text-field id="poll-min-value" value=controller.pollMinValue placeholderKey="poll_ui.poll_min_placeholder" maxlength="3" }}</td>
-          <td>{{i18n "poll_ui.poll_max_label" }}</td>
+          <td>{{#if isNumberPoll}}{{i18n "poll_ui.poll_max_numeric_label" }}{{else}}{{i18n "poll_ui.poll_max_multiple_label" }}{{/if}}</td>
           <td class="numeric-field">{{text-field id="poll-max-value" value=controller.pollMaxValue placeholderKey="poll_ui.poll_max_placeholder" maxlength="3" }}</td>
         </tr>
         {{/if}}
@@ -25,6 +25,7 @@
         <tr>
           <td>{{i18n "poll_ui.poll_step_label" }}</td>
           <td class="numeric-field">{{text-field id="poll-step-value" value=controller.pollStepValue placeholderKey="poll_ui.poll_step_placeholder" maxlength="3" }}</td>
+          <td colspan="2"></td>
         </tr>
         {{/if}}
       </tbody>
