@@ -16,6 +16,11 @@ export default Ember.Controller.extend(ModalFunctionality, {
     return this.get("pollType") == I18n.t("poll_ui.poll_type.number");
   }.property("pollType"),
 
+  isMultipleOrNumberPoll: function(){
+    return this.isNumberPoll()
+        || this.get("pollType") == I18n.t("poll_ui.poll_type.multiple");
+  }.property("pollType"),
+
   actions: {
     apply: function() {
       this.send('closeModal');
