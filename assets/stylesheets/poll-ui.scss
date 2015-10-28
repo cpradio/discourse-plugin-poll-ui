@@ -5,9 +5,20 @@
 .poll-ui-modal {
   table {
     width: 100%;
+
+    td:nth-child(2) {
+      text-align: right;
+    }
+
+    input {
+      margin-right: 1em;
+      width: 90%;
+    }
+
     .options input, .number-options input {
       width: 3em;
     }
+
     .number-options {
       display: none;
     }
