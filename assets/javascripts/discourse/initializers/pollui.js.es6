@@ -9,7 +9,7 @@ export default
   {
     ApplicationRoute.reopen({
       actions: {
-        showImgFlip: function (composerView) {
+        showPollUI: function (composerView) {
           showModal('pollui');
           this.controllerFor('pollui').setProperties({composerView: composerView});
         }
