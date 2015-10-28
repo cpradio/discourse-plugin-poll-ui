@@ -15,10 +15,12 @@
           <td>{{i18n "poll_ui.poll_max_label" }}</td>
           <td class="numeric-field">{{text-field id="poll-max-value" value=controller.pollMaxValue placeholderKey="poll_ui.poll_max_placeholder" maxlength="3" }}</td>
         </tr>
-        <tr class="number-options">
+        {{#if isNumberPoll}}
+        <tr>
           <td>{{i18n "poll_ui.poll_step_label" }}</td>
           <td class="numeric-field">{{text-field id="poll-step-value" value=controller.pollStepValue placeholderKey="poll_ui.poll_step_placeholder" maxlength="3" }}</td>
         </tr>
+        {{/if}}
       </tbody>
     </table>
   </div>
