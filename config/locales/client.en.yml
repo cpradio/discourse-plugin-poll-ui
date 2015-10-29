@@ -14,6 +14,7 @@ en:
       poll_max_placeholder: "1, 2, 3, ..."
       poll_step_label: "Steps between Numbers:"
       poll_step_placeholder: "1, 2, 3, ..."
+      poll_option_placeholder: "Poll Option Name"
       insert_button: "Insert Poll"
       poll_type:
         regular: "Regular"

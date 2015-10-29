@@ -11,6 +11,7 @@ export default Ember.Controller.extend(ModalFunctionality, {
     { 'title': I18n.t("poll_ui.poll_type.multiple") },
     { 'title': I18n.t("poll_ui.poll_type.number") }
   ],
+  pollOptions: ["", "", "", ""],
 
   isNumberPoll: function() {
     return this.get("pollType") == I18n.t("poll_ui.poll_type.number");
@@ -30,9 +31,13 @@ export default Ember.Controller.extend(ModalFunctionality, {
   refresh: function() {
   },
 
+  onShow: function() {
+    this.setProperties({pollName: "", pollType: I18n.t("poll_ui.poll_type.regular"), pollMinValue: 1,
+      pollMaxValue: 1, pollStepValue: 1, pollOptions: ["", "", "", ""] });
+  },
+
   init: function () {
     this._super();
-    this.setProperties({pollName: "", pollType: I18n.t("poll_ui.poll_type.regular"), pollMinValue: 1, pollMaxValue: 1, pollStepValue: 1 });
 
     this.addObserver("pollType", function() {
       this.refresh();
