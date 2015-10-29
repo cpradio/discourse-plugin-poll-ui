@@ -1,7 +1,7 @@
 export default Ember.View.extend({
   result: Em.computed.alias("content"),
   tagName: "div",
-  classNames: ["option-input"],
+  classNames: [],
   templateName: "poll-ui-option",
 
   idName: function() {
