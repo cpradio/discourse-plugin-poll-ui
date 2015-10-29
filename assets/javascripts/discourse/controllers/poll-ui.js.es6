@@ -23,6 +23,15 @@ export default Ember.Controller.extend(ModalFunctionality, {
   }.property("pollType"),
 
   actions: {
+    deleteOption: function(result) {
+      var location = pollOptions.indexOf(result);
+      pollOptions.splice(location, 1);
+
+      var id = 0;
+      pollOptions.forEach(function(item) {
+        item.id = id + 1;
+      })
+    },
     apply: function() {
       this.send('closeModal');
     }
