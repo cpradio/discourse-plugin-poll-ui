@@ -4,7 +4,11 @@ export default Ember.View.extend({
   classNames: ["option-input"],
   templateName: "poll-ui-option",
 
+  idName: function() {
+    return "option" + this.get("result.id")
+  }.property("result"),
+
   optionText: function() {
-    return this.get("result")
+    return this.get("result.text")
   }.property("result"),
 });
