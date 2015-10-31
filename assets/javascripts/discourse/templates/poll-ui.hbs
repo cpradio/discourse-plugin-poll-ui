@@ -21,7 +21,6 @@
             {{else}}
               {{i18n "poll_ui.poll_min_multiple_label" }}
             {{/if}}
-            {{input-tip validation=minValueValidation}}
           </td>
           <td class="numeric-field">
             {{text-field id="poll-min-value" value=controller.pollMinValue placeholderKey="poll_ui.poll_min_placeholder" maxlength="3" }}
@@ -32,24 +31,27 @@
             {{else}}
               {{i18n "poll_ui.poll_max_multiple_label" }}
             {{/if}}
-            {{input-tip validation=maxValueValidation}}
           </td>
           <td class="numeric-field">
             {{text-field id="poll-max-value" value=controller.pollMaxValue placeholderKey="poll_ui.poll_max_placeholder" maxlength="3" }}
           </td>
+        </tr>
+        <tr>
+          <td colspan="2">{{input-tip validation=minValueValidation}}</td>
+          <td colspan="2">{{input-tip validation=maxValueValidation}}</td>
         </tr>
         {{/if}}
         {{#if isNumberPoll}}
         <tr>
           <td>
             {{i18n "poll_ui.poll_step_label" }}
-            {{input-tip validation=stepValueValidation}}
           </td>
           <td class="numeric-field">
             {{text-field id="poll-step-value" value=controller.pollStepValue placeholderKey="poll_ui.poll_step_placeholder" maxlength="3" }}
           </td>
           <td colspan="2"></td>
         </tr>
+        <tr><td colspan="4">{{input-tip validation=stepValueValidation}}</td></tr>
         {{/if}}
       </tbody>
     </table>
