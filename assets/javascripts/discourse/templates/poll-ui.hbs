@@ -11,6 +11,11 @@
         </tr>
       </tbody>
     </table>
+    <div class="errors">
+      {{input-tip validation=minValueValidation}}
+      {{input-tip validation=maxValueValidation}}
+      {{input-tip validation=stepValueValidation}}
+    </div>
     <table>
       <tbody>
         {{#if isMultipleOrNumberPoll}}
@@ -36,10 +41,6 @@
             {{text-field id="poll-max-value" value=controller.pollMaxValue placeholderKey="poll_ui.poll_max_placeholder" maxlength="3" }}
           </td>
         </tr>
-        <tr>
-          <td colspan="2">{{input-tip validation=minValueValidation}}</td>
-          <td colspan="2">{{input-tip validation=maxValueValidation}}</td>
-        </tr>
         {{/if}}
         {{#if isNumberPoll}}
         <tr>
@@ -51,7 +52,6 @@
           </td>
           <td colspan="2"></td>
         </tr>
-        <tr><td colspan="4">{{input-tip validation=stepValueValidation}}</td></tr>
         {{/if}}
       </tbody>
     </table>
