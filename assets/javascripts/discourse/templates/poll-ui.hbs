@@ -6,7 +6,7 @@
           <td>{{i18n "poll_ui.poll_name_label"}}</td>
           <td>{{text-field id="poll-name" value=controller.pollName placeholderKey="poll_ui.poll_name_placeholder" }}</td>
           <td>{{i18n "poll_ui.poll_type_label"}}</td>
-          <td>{{combo-box name="poll-type" valueAttribute="title" value=controller.pollType
+          <td>{{combo-box name="poll-type" valueAttribute="value" value=controller.pollType
             nameProperty="title" content=pollTypes }}</td>
         </tr>
       </tbody>
