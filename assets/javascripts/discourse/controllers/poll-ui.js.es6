@@ -14,6 +14,10 @@ export default Ember.Controller.extend(ModalFunctionality, {
   pollOptions: "",
   pollAnswerValue: "",
 
+  canProvideAnswers: function() {
+    return Discourse.SiteSettings.poll_ui_provide_answers;
+  },
+
   isNumberPoll: function() {
     return this.get("pollType") == "number";
   }.property("pollType"),
