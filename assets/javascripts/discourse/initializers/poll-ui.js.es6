@@ -20,7 +20,7 @@ export default
       initEditor: function () {
         // overwrite and wrap.
         this._super();
-        if (Discourse.SiteSettings.poll_ui_enabled) {
+        if (Discourse.SiteSettings.pollui_enabled) {
           var view = this;
           var button_text = I18n.t("poll_ui.composer_button_text");
           var btn = $('<button class="wmd-button wmd-poll-ui-button" title="' + button_text + '" aria-label="' + button_text + '"></button>');
