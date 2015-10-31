@@ -15,16 +15,37 @@
       <tbody>
         {{#if isMultipleOrNumberPoll}}
         <tr>
-          <td>{{#if isNumberPoll}}{{i18n "poll_ui.poll_min_numeric_label" }}{{else}}{{i18n "poll_ui.poll_min_multiple_label" }}{{/if}}</td>
-          <td class="numeric-field">{{text-field id="poll-min-value" value=controller.pollMinValue placeholderKey="poll_ui.poll_min_placeholder" maxlength="3" }}</td>
-          <td>{{#if isNumberPoll}}{{i18n "poll_ui.poll_max_numeric_label" }}{{else}}{{i18n "poll_ui.poll_max_multiple_label" }}{{/if}}</td>
-          <td class="numeric-field">{{text-field id="poll-max-value" value=controller.pollMaxValue placeholderKey="poll_ui.poll_max_placeholder" maxlength="3" }}</td>
+          <td>
+            {{#if isNumberPoll}}
+              {{i18n "poll_ui.poll_min_numeric_label" }}
+            {{else}}
+              {{i18n "poll_ui.poll_min_multiple_label" }}
+            {{/if}}
+          </td>
+          <td class="numeric-field">
+            {{text-field id="poll-min-value" value=controller.pollMinValue placeholderKey="poll_ui.poll_min_placeholder" maxlength="3" }}
+            {{input-tip validation=minValueValidation}}
+          </td>
+          <td>
+            {{#if isNumberPoll}}
+              {{i18n "poll_ui.poll_max_numeric_label" }}
+            {{else}}
+              {{i18n "poll_ui.poll_max_multiple_label" }}
+            {{/if}}
+          </td>
+          <td class="numeric-field">
+            {{text-field id="poll-max-value" value=controller.pollMaxValue placeholderKey="poll_ui.poll_max_placeholder" maxlength="3" }}
+            {{input-tip validation=maxValueValidation}}
+          </td>
         </tr>
         {{/if}}
         {{#if isNumberPoll}}
         <tr>
           <td>{{i18n "poll_ui.poll_step_label" }}</td>
-          <td class="numeric-field">{{text-field id="poll-step-value" value=controller.pollStepValue placeholderKey="poll_ui.poll_step_placeholder" maxlength="3" }}</td>
+          <td class="numeric-field">
+            {{text-field id="poll-step-value" value=controller.pollStepValue placeholderKey="poll_ui.poll_step_placeholder" maxlength="3" }}
+            {{input-tip validation=stepValueValidation}}
+          </td>
           <td colspan="2"></td>
         </tr>
         {{/if}}
@@ -40,5 +61,5 @@
   {{/unless}}
 </div>
 <div class="modal-footer">
-  <button class="btn btn-primary pull-right" {{action "apply"}}>{{i18n "poll_ui.insert_button"}}</button>
+  <button class="btn btn-primary pull-right" {{bind-attr disabled="submitDisabled"}} {{action "apply"}}>{{i18n "poll_ui.insert_button"}}</button>
 </div>
