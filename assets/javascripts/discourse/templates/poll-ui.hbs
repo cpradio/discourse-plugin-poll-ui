@@ -64,6 +64,11 @@
     {{d-editor value=pollOptions}}
   </div>
   {{/unless}}
+  {{#if canProvideAnswers}}
+    <div class="answer">
+      {{i18n "poll_ui.poll_answer_label" }} {{text-field id="poll-answer" value=controller.pollAnswerValue placeholderKey="poll_ui.poll_answer_placeholder" }}
+    </div>
+  {{/if}}
 </div>
 <div class="modal-footer">
   <button class="btn btn-primary pull-right" {{bind-attr disabled="submitDisabled"}} {{action "apply"}}>{{i18n "poll_ui.insert_button"}}</button>
