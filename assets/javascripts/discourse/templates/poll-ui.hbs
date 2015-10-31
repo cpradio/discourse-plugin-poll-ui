@@ -58,7 +58,7 @@
   </div>
   <div class="content">
     {{#unless isNumberPoll}}
-    <div class="choices" {{bind-attr class="choicesClass"}}>
+    <div {{bind-attr class=":choices choicesClass"}}>
       <hr />
       <div>{{i18n "poll_ui.poll_options_label"}}</div>
       {{input-tip validation=optionsValidation}}
