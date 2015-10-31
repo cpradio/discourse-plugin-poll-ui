@@ -31,11 +31,13 @@
       </tbody>
     </table>
   </div>
+  {{#unless isNumberPoll}}
   <hr />
   <div class="content">
     <div>{{i18n "poll_ui.poll_options_label"}}</div>
     {{d-editor value=pollOptions}}
   </div>
+  {{/unless}}
 </div>
 <div class="modal-footer">
   <button class="btn btn-primary pull-right" {{action "apply"}}>{{i18n "poll_ui.insert_button"}}</button>

@@ -35,7 +35,9 @@ export default Ember.Controller.extend(ModalFunctionality, {
       composerOutput += (minValue) ? " min=" + minValue : "";
       composerOutput += (maxValue) ? " max=" + maxValue : "";
       composerOutput += (stepValue && type == "number") ? " step=" + stepValue : "";
-      composerOutput += "]\r\n" + options.replace(/^(.*)/gmi, "* $1") + "\r\n[/poll]";
+      composerOutput += "]";
+      composerOutput += (options && type != "number") ? "\r\n" + options.replace(/^(.*)/gmi, "* $1") + "\r\n" : "";
+      composerOutput += "[/poll]";
       self.composerView.addMarkdown(composerOutput);
       this.send('closeModal');
     }
