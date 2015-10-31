@@ -61,12 +61,13 @@
   <div class="content">
     <div>{{i18n "poll_ui.poll_options_label"}}</div>
     {{input-tip validation=optionsValidation}}
-    {{d-editor value=pollOptions}}
+    {{d-editor value=controller.pollOptions}}
   </div>
   {{/unless}}
   {{#if canProvideAnswers}}
     <div class="answer">
-      {{i18n "poll_ui.poll_answer_label" }} {{text-field id="poll-answer" value=controller.pollAnswerValue placeholderKey="poll_ui.poll_answer_placeholder" }}
+      <div>{{i18n "poll_ui.poll_answer_label" }}</div>
+      {{d-editor value=controller.pollAnswerValue }}
     </div>
   {{/if}}
 </div>
