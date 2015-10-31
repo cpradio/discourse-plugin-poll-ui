@@ -59,7 +59,6 @@
   <div class="content">
     {{#unless isNumberPoll}}
     <div {{bind-attr class=":choices choicesClass"}}>
-      <hr />
       <div>{{i18n "poll_ui.poll_options_label"}}</div>
       {{input-tip validation=optionsValidation}}
       {{d-editor value=controller.pollOptions}}
