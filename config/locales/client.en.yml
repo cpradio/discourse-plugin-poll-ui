@@ -21,6 +21,8 @@ en:
       poll_step_must_be_less_than_max: "This value must be less than the Maximum Number/End of Range."
       poll_options_label: "Poll Choices: (one option per line)"
       poll_option_delete: "Delete"
+      poll_options_must_have_two_entries: "Choices must have at least 2 options."
+      poll_options_must_be_greater_than_min_max_values: "Choices must have more options than defined in the Minimum Number/Start of Range and Maximum Number/End of Range fields."
       insert_button: "Insert Poll"
       poll_type:
         regular: "Regular"

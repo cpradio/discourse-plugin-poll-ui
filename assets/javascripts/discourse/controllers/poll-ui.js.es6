@@ -67,13 +67,33 @@ export default Ember.Controller.extend(ModalFunctionality, {
     return Discourse.InputValidation.create({ok: true});
   }.property('pollStepValue', 'pollMaxValue'),
 
+  // Validate the Options
+  optionsValidation: function() {
+    if (this.get("pollType") == "number")
+      return Discourse.InputValidation.create({ok: true});
+
+    var options = this.get('pollOptions'),
+      numOptions = (options.match(/^(.*)$/gm) || []).length,
+      intMinValue = parseInt(this.get('pollMinValue')),
+      intMaxValue = parseInt(this.get('pollMaxValue'));
+
+    if (Ember.isEmpty(options) || numOptions < 2) {
+      return Discourse.InputValidation.create({ failed: true, reason: I18n.t("poll_ui.poll_options_must_have_two_entries") });
+    }
+
+    if (numOptions < intMinValue || numOptions < intMaxValue) {
+      return Discourse.InputValidation.create({ failed: true, reason: I18n.t("poll_ui.poll_options_must_be_greater_than_min_max_values") });
+    }
+  }.property('pollType', 'pollOptions', 'pollMinValue', 'pollMaxValue'),
+
   submitDisabled: function() {
     if (this.get("minValueValidation.failed")) return true;
     if (this.get("maxValueValidation.failed")) return true;
     if (this.get("stepValueValidation.failed")) return true;
+    if (this.get("optionsValidation.failed")) return true;
 
     return false;
-  }.property('minValueValidation.failed', 'maxValueValidation.failed', 'stepValueValidation.failed'),
+  }.property('minValueValidation.failed', 'maxValueValidation.failed', 'stepValueValidation.failed', 'optionsValidation.failed'),
 
   actions: {
     apply: function() {
