@@ -120,7 +120,7 @@ export default Ember.Controller.extend(ModalFunctionality, {
       if (!Ember.isEmpty(answerValue)) {
         composerOutput += "\r\n<details>\r\n<summary>";
         composerOutput += I18n.t("poll_ui.poll_answer_summary_title") + "</summary>\r\n";
-        compowerOutput += answerValue + "\r\n</details>";
+        composerOutput += answerValue + "\r\n</details>";
       }
 
       self.composerView.addMarkdown(composerOutput);
