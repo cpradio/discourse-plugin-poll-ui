@@ -77,7 +77,7 @@ export default Ember.Controller.extend(ModalFunctionality, {
       intMinValue = parseInt(this.get('pollMinValue')),
       intMaxValue = parseInt(this.get('pollMaxValue'));
 
-    if (numOptions < 2) {
+    if (!Ember.isEmpty(this.get("pollOptions")) && numOptions < 2) {
       return Discourse.InputValidation.create({ failed: true, reason: I18n.t("poll_ui.poll_options_must_have_two_entries") });
     }
 
