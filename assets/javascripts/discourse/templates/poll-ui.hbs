@@ -56,20 +56,22 @@
       </tbody>
     </table>
   </div>
-  {{#unless isNumberPoll}}
-  <hr />
   <div class="content">
-    <div>{{i18n "poll_ui.poll_options_label"}}</div>
-    {{input-tip validation=optionsValidation}}
-    {{d-editor value=controller.pollOptions}}
-  </div>
-  {{/unless}}
-  {{#if canProvideAnswers}}
+    {{#unless isNumberPoll}}
+    <div class="choices">
+      <hr />
+      <div>{{i18n "poll_ui.poll_options_label"}}</div>
+      {{input-tip validation=optionsValidation}}
+      {{d-editor value=controller.pollOptions}}
+    </div>
+    {{/unless}}
+    {{#if canProvideAnswers}}
     <div class="answer">
       <div>{{i18n "poll_ui.poll_answer_label" }}</div>
       {{d-editor value=controller.pollAnswerValue }}
     </div>
-  {{/if}}
+    {{/if}}
+  </div>
 </div>
 <div class="modal-footer">
   <button class="btn btn-primary pull-right" {{bind-attr disabled="submitDisabled"}} {{action "apply"}}>{{i18n "poll_ui.insert_button"}}</button>
