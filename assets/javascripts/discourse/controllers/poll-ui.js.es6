@@ -118,8 +118,7 @@ export default Ember.Controller.extend(ModalFunctionality, {
       composerOutput += "[/poll]";
 
       if (!Ember.isEmpty(answerValue)) {
-        composerOutput += "\r\n<details>\r\n<summary>";
-        composerOutput += I18n.t("poll_ui.poll_answer_summary_title") + "</summary>\r\n";
+        composerOutput += "\r\n<details><summary>" + I18n.t("poll_ui.poll_answer_summary_title") + "</summary>\r\n";
         composerOutput += answerValue + "\r\n</details>";
       }
 

@@ -50,5 +50,11 @@
         }
       }
     }
+
+    .answer {
+      .d-editor-preview {
+        display: none;
+      }
+    }
   }
 }
