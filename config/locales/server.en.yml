@@ -1,4 +1,3 @@
-en:
-  site_settings:
-    pollui_enabled: 'Show Insert Poll button on composer window?'
-    pollui_provide_answers: 'Provide the ability to provide an answer?'
+plugins::
+  poll_ui_enabled: 'Show Insert Poll button on composer window?'
+  poll_ui_provide_answers: 'Provide the ability to provide an answer?'

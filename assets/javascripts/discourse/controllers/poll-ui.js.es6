@@ -13,10 +13,10 @@ export default Ember.Controller.extend(ModalFunctionality, {
   ],
   pollOptions: "",
   pollAnswerValue: "",
-  choicesClass: (this.siteSettings.pollui_provide_answers) ? "has-answers" : "no-answers",
+  choicesClass: (this.siteSettings.poll_ui_provide_answers) ? "has-answers" : "no-answers",
 
   canProvideAnswers: function() {
-    return this.siteSettings.pollui_provide_answers;
+    return this.siteSettings.poll_ui_provide_answers;
   },
 
   isNumberPoll: function() {

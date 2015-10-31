@@ -1,7 +1,7 @@
 plugins:
-  pollui_enabled:
+  poll_ui_enabled:
     default: true
     client: true
-  pollui_provide_answers:
+  poll_ui_provide_answers:
     default: false
     client: true
