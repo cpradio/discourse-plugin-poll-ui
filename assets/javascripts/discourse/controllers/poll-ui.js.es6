@@ -22,6 +22,79 @@ export default Ember.Controller.extend(ModalFunctionality, {
         || this.get("pollType") == "number";
   }.property("pollType"),
 
+  // Validate the Minimum Value.
+  minValueValidation: function() {
+    var mustBeNumeric = new RegExp(/^[\d]+$/),
+      minValue = this.get('pollMinValue'),
+      intMinValue = parseInt(this.get('pollMinValue')),
+      intMaxValue = parseInt(this.get('pollMaxValue'));
+    if (Ember.isEmpty(minValue) || !parseInt(minValue) || !mustBeNumeric.test(minValue)) {
+      return Discourse.InputValidation.create({ failed: true, reason: I18n.t("poll_ui.poll_min_must_be_numeric") });
+    }
+
+    if (intMinValue > intMaxValue) {
+      return Discourse.InputValidation.create({ failed: true, reason: I18n.t("poll_ui.poll_min_must_be_less_than_max") });
+    }
+
+    return Discourse.InputValidation.create({ok: true});
+  }.property('pollMinValue', 'pollMaxValue'),
+
+  // Validate the Maximum Value.
+  maxValueValidation: function() {
+    var mustBeNumeric = new RegExp(/^[\d]+$/),
+      maxValue = this.get('pollMaxValue');
+    if (Ember.isEmpty(maxValue) || !parseInt(maxValue) || !mustBeNumeric.test(maxValue)) {
+      return Discourse.InputValidation.create({ failed: true, reason: I18n.t("poll_ui.poll_max_must_be_numeric") });
+    }
+
+    return Discourse.InputValidation.create({ok: true});
+  }.property('pollMaxValue'),
+
+  // Validate the Step Value.
+  stepValueValidation: function() {
+    var mustBeNumeric = new RegExp(/^[\d]+$/),
+      stepValue = this.get('pollStepValue'),
+      intStepValue = parseInt(this.get('pollStepValue')),
+      intMaxValue = parseInt(this.get('pollMaxValue'));
+    if (Ember.isEmpty(stepValue) || !parseInt(stepValue) || !mustBeNumeric.test(stepValue)) {
+      return Discourse.InputValidation.create({ failed: true, reason: I18n.t("poll_ui.poll_step_must_be_numeric") });
+    }
+
+    if (intStepValue > intMaxValue) {
+      return Discourse.InputValidation.create({ failed: true, reason: I18n.t("poll_ui.poll_step_must_be_less_than_max") });
+    }
+
+    return Discourse.InputValidation.create({ok: true});
+  }.property('pollStepValue', 'pollMaxValue'),
+
+  // Validate the Options
+  optionsValidation: function() {
+    if (this.get("pollType") == "number")
+      return Discourse.InputValidation.create({ok: true});
+
+    var options = this.get('pollOptions'),
+      numOptions = (options.match(/^(.*)$/gm) || []).length,
+      intMinValue = parseInt(this.get('pollMinValue')),
+      intMaxValue = parseInt(this.get('pollMaxValue'));
+
+    if (!Ember.isEmpty(this.get("pollOptions")) && numOptions < 2) {
+      return Discourse.InputValidation.create({ failed: true, reason: I18n.t("poll_ui.poll_options_must_have_two_entries") });
+    }
+
+    if (numOptions < intMinValue || numOptions < intMaxValue) {
+      return Discourse.InputValidation.create({ failed: true, reason: I18n.t("poll_ui.poll_options_must_be_greater_than_min_max_values") });
+    }
+  }.property('pollType', 'pollOptions', 'pollMinValue', 'pollMaxValue'),
+
+  submitDisabled: function() {
+    if (this.get("minValueValidation.failed")) return true;
+    if (this.get("maxValueValidation.failed")) return true;
+    if (this.get("stepValueValidation.failed")) return true;
+    if (this.get("optionsValidation.failed")) return true;
+    if (this.get("pollType") != "numeric" && Ember.isEmpty(this.get("pollOptions"))) return true;
+    return false;
+  }.property('pollType', 'pollOptions', 'minValueValidation.failed', 'maxValueValidation.failed', 'stepValueValidation.failed', 'optionsValidation.failed'),
+
   actions: {
     apply: function() {
       var name = this.get("pollName"), type = this.get("pollType"),
