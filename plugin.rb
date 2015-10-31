@@ -4,7 +4,7 @@
 # authors: Matthew Wilkin
 # url: https://github.com/cpradio/discourse-plugin-poll-ui
 
-enabled_site_setting :poll_ui_enabled
+enabled_site_setting :pollui_enabled
 
 register_asset "javascripts/discourse/templates/poll-ui.hbs"
 
