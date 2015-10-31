@@ -22,8 +22,13 @@
       width: 3em;
     }
   }
+
+  .tip.good {
+    display: none;
+  }
+
   .content {
-    max-height: 335px;
+    max-height: 330px;
     min-height: 200px;
     overflow-y: auto;
     padding: 0 .5em;
