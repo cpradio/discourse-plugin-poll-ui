@@ -43,15 +43,21 @@
           .d-editor-preview {
             display: none;
           }
-
-          textarea {
-            height: 150px;
-          }
         }
       }
     }
 
+    .no-answers {
+      textarea {
+        height: 150px;
+      }
+    }
+
     .answer {
+      .d-editor-container {
+        padding: 0 10px 0 10px;
+      }
+
       .d-editor-preview {
         display: none;
       }
