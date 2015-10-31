@@ -28,5 +28,21 @@
     overflow-y: scroll;
     padding: 0 .5em;
     clear: both;
+
+    .d-editor {
+      border-width: 0;
+
+      .d-editor-container {
+        padding: 0;
+
+        .d-editor-button-bar {
+          display: none;
+        }
+
+        .d-editor-preview {
+          display: none;
+        }
+      }
+    }
   }
 }
