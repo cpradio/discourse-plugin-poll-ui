@@ -22,30 +22,49 @@
       width: 3em;
     }
   }
+
+  .tip.good {
+    display: none;
+  }
+
   .content {
-    max-height: 335px;
+    max-height: 300px;
     min-height: 200px;
     overflow-y: auto;
     padding: 0 .5em;
     clear: both;
 
-    .d-editor {
-      border-width: 0;
+    .choices {
+      .d-editor {
+        border-width: 0;
 
+        .d-editor-container {
+          padding: 0;
+
+          .d-editor-button-bar {
+            display: none;
+          }
+
+          .d-editor-preview {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .no-answers {
+      textarea {
+        height: 150px;
+      }
+    }
+
+    .answer {
       .d-editor-container {
-        padding: 0;
+        padding: 0 10px 0 10px;
+      }
 
-        .d-editor-button-bar {
-          display: none;
-        }
-
-        .d-editor-preview {
-          display: none;
-        }
-
-        textarea {
-          height: 150px;
-        }
+      .d-editor-preview {
+        display: none;
       }
     }
   }

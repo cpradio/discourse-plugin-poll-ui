@@ -12,6 +12,9 @@ export default Ember.Controller.extend(ModalFunctionality, {
     { 'title': I18n.t("poll_ui.poll_type.number"), 'value': "number" }
   ],
   pollOptions: "",
+  pollAnswerValue: "",
+  choicesClass: Discourse.SiteSettings.poll_ui_provide_answers ? "has-answers" : "no-answers",
+  canProvideAnswers: Discourse.SiteSettings.poll_ui_provide_answers,
 
   isNumberPoll: function() {
     return this.get("pollType") == "number";
@@ -100,10 +103,10 @@ export default Ember.Controller.extend(ModalFunctionality, {
       var name = this.get("pollName"), type = this.get("pollType"),
         minValue = this.get("pollMinValue"), maxValue = this.get("pollMaxValue"),
         stepValue = this.get("pollStepValue"), options = this.get("pollOptions"),
-        self = this, composerOutput = "";
+        answerValue = this.get("pollAnswerValue"), self = this, composerOutput = "";
 
       composerOutput += "[poll";
-      composerOutput += (name) ? " name='" + name + "'" : "";
+      composerOutput += (name) ? " name='" + name.replace(/\s/g, '_') + "'" : "";
       composerOutput += (type && type != "regular") ? " type=" + type : "";
       composerOutput += (minValue) ? " min=" + minValue : "";
       composerOutput += (maxValue) ? " max=" + maxValue : "";
@@ -111,6 +114,12 @@ export default Ember.Controller.extend(ModalFunctionality, {
       composerOutput += "]";
       composerOutput += (options && type != "number") ? "\r\n" + options.replace(/^(.*)/gmi, "* $1") + "\r\n" : "";
       composerOutput += "[/poll]";
+
+      if (!Ember.isEmpty(answerValue)) {
+        composerOutput += "\r\n<details><summary>" + I18n.t("poll_ui.poll_answer_summary_title") + "</summary>\r\n";
+        composerOutput += answerValue + "\r\n</details>";
+      }
+
       self.composerView.addMarkdown(composerOutput);
       this.send('closeModal');
     }
@@ -121,7 +130,7 @@ export default Ember.Controller.extend(ModalFunctionality, {
 
   onShow: function() {
     this.setProperties({pollName: "", pollType: "regular", pollMinValue: 1,
-      pollMaxValue: 1, pollStepValue: 1, pollOptions: "" });
+      pollMaxValue: 1, pollStepValue: 1, pollOptions: "", pollAnswerValue: "" });
   },
 
   init: function () {
