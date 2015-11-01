@@ -10,6 +10,9 @@ Admin Settings
 In Action
 ![](https://raw.githubusercontent.com/cpradio/discourse-plugin-poll-ui/master/screenshot-action.gif)
 
+Still of the Plugin using the With Answers option
+![](https://raw.githubusercontent.com/cpradio/discourse-plugin-poll-ui/master/screenshot-composer-with-answers.png)
+
 ## How to Help
 
 - Create a PR with a new translation!
