@@ -106,7 +106,7 @@ export default Ember.Controller.extend(ModalFunctionality, {
         answerValue = this.get("pollAnswerValue"), self = this, composerOutput = "";
 
       composerOutput += "[poll";
-      composerOutput += (name) ? " name='" + name.replace(' ', '_') + "'" : "";
+      composerOutput += (name) ? " name='" + name.replace(/\s/g, '_') + "'" : "";
       composerOutput += (type && type != "regular") ? " type=" + type : "";
       composerOutput += (minValue) ? " min=" + minValue : "";
       composerOutput += (maxValue) ? " max=" + maxValue : "";
