@@ -10,7 +10,7 @@ export default
   {
     const siteSettings = container.lookup('site-settings:main');
 
-    if (Discourse.SiteSettings.poll_ui_enabled) {
+    if (siteSettings.poll_ui_enabled) {
       if (typeof Discourse.ComposerEditorComponent === "undefined") {
         ApplicationRoute.reopen({
           actions: {
