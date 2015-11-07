@@ -6,7 +6,7 @@ import { onToolbarCreate } from 'discourse/components/d-editor';
 export default
 {
   name: 'poll-ui',
-  initialize()
+  initialize(container)
   {
     const siteSettings = container.lookup('site-settings:main');
 
