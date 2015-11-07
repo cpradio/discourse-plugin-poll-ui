@@ -16,7 +16,7 @@ export default
           actions: {
             showPollUI: function (composerView) {
               showModal('poll-ui');
-              this.controllerFor('poll-ui').setProperties({composerView: composerView});
+              this.controllerFor('poll-ui').setProperties({composerViewOld: composerView});
             }
           }
         });
@@ -38,7 +38,7 @@ export default
         Discourse.DEditorComponent.reopen({
           actions: {
             showPollUI: function() {
-              showModal('poll-ui');
+              showModal('poll-ui').setProperties({composerView: this});
             }
           }
         });

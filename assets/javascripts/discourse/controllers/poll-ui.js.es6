@@ -120,7 +120,11 @@ export default Ember.Controller.extend(ModalFunctionality, {
         composerOutput += answerValue + "\r\n</details>";
       }
 
-      self.composerView.addMarkdown(composerOutput);
+      if (self.composerViewOld)
+        self.composerViewOld.addMarkdown(composerOutput);
+      else if (self.composerView) {
+        self.composerView._addText('', composerOutput);
+      }
       this.send('closeModal');
     }
   },
