@@ -123,7 +123,7 @@ export default Ember.Controller.extend(ModalFunctionality, {
       if (self.composerViewOld)
         self.composerViewOld.addMarkdown(composerOutput);
       else if (self.composerView) {
-        self.composerView._addText('', composerOutput);
+        self.composerView._addText(self.composerView._getSelected(), composerOutput);
       }
       this.send('closeModal');
     }
