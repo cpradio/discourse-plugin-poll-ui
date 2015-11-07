@@ -1,5 +1,7 @@
 en:
   js:
+    composer:
+      poll_ui_button_text: "Insert Poll"
     poll_ui:
       composer_button_text: "Insert Poll"
       modal_title: "Insert Poll"
