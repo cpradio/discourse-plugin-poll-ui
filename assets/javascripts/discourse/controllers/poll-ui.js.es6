@@ -17,12 +17,12 @@ export default Ember.Controller.extend(ModalFunctionality, {
   canProvideAnswers: Discourse.SiteSettings.poll_ui_provide_answers,
 
   isNumberPoll: function() {
-    return this.get("pollType") == "number";
+    return this.get("pollType") === "number";
   }.property("pollType"),
 
   isMultipleOrNumberPoll: function() {
-    return this.get("pollType") == "multiple"
-        || this.get("pollType") == "number";
+    return this.get("pollType") === "multiple"
+        || this.get("pollType") === "number";
   }.property("pollType"),
 
   // Validate the Minimum Value.
@@ -94,7 +94,7 @@ export default Ember.Controller.extend(ModalFunctionality, {
     if (this.get("maxValueValidation.failed")) return true;
     if (this.get("stepValueValidation.failed")) return true;
     if (this.get("optionsValidation.failed")) return true;
-    if (this.get("pollType") != "numeric" && Ember.isEmpty(this.get("pollOptions"))) return true;
+    if (this.get("pollType") !== "number" && Ember.isEmpty(this.get("pollOptions"))) return true;
     return false;
   }.property('pollType', 'pollOptions', 'minValueValidation.failed', 'maxValueValidation.failed', 'stepValueValidation.failed', 'optionsValidation.failed'),
 
@@ -110,9 +110,9 @@ export default Ember.Controller.extend(ModalFunctionality, {
       composerOutput += (type && type != "regular") ? " type=" + type : "";
       composerOutput += (minValue) ? " min=" + minValue : "";
       composerOutput += (maxValue) ? " max=" + maxValue : "";
-      composerOutput += (stepValue && type == "number") ? " step=" + stepValue : "";
+      composerOutput += (stepValue && type === "number") ? " step=" + stepValue : "";
       composerOutput += "]";
-      composerOutput += (options && type != "number") ? "\r\n" + options.replace(/^(.*)/gmi, "* $1") + "\r\n" : "";
+      composerOutput += (options && type !== "number") ? "\r\n" + options.replace(/^(.*)/gmi, "* $1") + "\r\n" : "";
       composerOutput += "[/poll]";
 
       if (!Ember.isEmpty(answerValue)) {
