@@ -1,6 +1,6 @@
 # name: discourse-plugin-poll-ui
 # about: Add a button to create a poll
-# version: 0.5
+# version: 0.5.1
 # authors: Matthew Wilkin
 # url: https://github.com/cpradio/discourse-plugin-poll-ui
 
