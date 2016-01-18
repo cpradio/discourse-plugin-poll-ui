@@ -1,0 +1,4 @@
+de:
+  site_settings:
+    poll_ui_enabled: 'Beim Verfassen den Knopf zum Erstellen von Umfragen anzeigen?'
+    poll_ui_provide_answers: 'Die Möglichkeit einräumen eine Antwort auf Umfragen zu geben?'
