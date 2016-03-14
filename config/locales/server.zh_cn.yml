@@ -1,4 +1,4 @@
-ch_cn:
+zh_cn:
   site_settings:
     poll_ui_enabled: '是否在投票编辑窗口显示发起投票按钮？'
     poll_ui_provide_answers: '是否允许提供一个答案？'
