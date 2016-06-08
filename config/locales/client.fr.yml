@@ -27,6 +27,7 @@ fr:
       poll_options_must_be_greater_than_min_max_values: "Vous devez proposer plus de choix que le nombre de réponses minimum et moins que les réponses maximales"
       poll_answer_summary_title: "Voir la réponse"
       poll_answer_label: "Réponse à la question : (facultatif)"
+      poll_make_public_label: "Rendre les votes publics"
       insert_button: "Poster le sondage"
       poll_type:
         regular: "Simple"
