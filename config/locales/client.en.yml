@@ -27,6 +27,7 @@ en:
       poll_options_must_be_greater_than_min_max_values: "Choices must have more options than defined in the Minimum Number/Start of Range and Maximum Number/End of Range fields."
       poll_answer_summary_title: "View Answer"
       poll_answer_label: "Answer to Poll: (optional)"
+      poll_make_public_label: "Make Public Poll"
       insert_button: "Insert Poll"
       poll_type:
         regular: "Regular"
