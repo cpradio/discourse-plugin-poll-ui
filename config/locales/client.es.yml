@@ -27,6 +27,7 @@ es:
       poll_options_must_be_greater_than_min_max_values: "Debe haber más opciones que el Mínimo de opciones a votar / Posiciones entre la Primera y la Última cifras del rango."
       poll_answer_summary_title: "Ver respuesta/pista"
       poll_answer_label: "Respuesta/pista de la Encuesta: (opcional)"
+      poll_make_public_label: "Hacer públicos los votantes"
       insert_button: "Crear Encuesta"
       poll_type:
         regular: "Normal"
