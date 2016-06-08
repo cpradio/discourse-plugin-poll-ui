@@ -137,7 +137,7 @@ export default Ember.Controller.extend(ModalFunctionality, {
 
   onShow: function() {
     this.setProperties({pollName: "", pollType: "regular", pollMinValue: 1,
-      pollMaxValue: 1, pollStepValue: 1, pollOptions: "", pollAnswerValue: "" });
+      pollMaxValue: 1, pollStepValue: 1, pollOptions: "", pollAnswerValue: "", pollMakePublic: false });
   },
 
   init: function () {
