@@ -73,5 +73,13 @@
   </div>
 </div>
 <div class="modal-footer">
-  <button class="btn btn-primary pull-right" {{bind-attr disabled="submitDisabled"}} {{action "apply"}}>{{i18n "poll_ui.insert_button"}}</button>
+  <div class="pull-left">
+    <label class='checkbox-label'>
+      {{input type="checkbox" id="make-public" checked=controller.pollMakePublic}}
+      {{i18n "poll_ui.poll_make_public_label"}}
+    </label>
+  </div>
+  <div class="pull-right">
+    <button class="btn btn-primary pull-right" {{bind-attr disabled="submitDisabled"}} {{action "apply"}}>{{i18n "poll_ui.insert_button"}}</button>
+  </div>
 </div>
