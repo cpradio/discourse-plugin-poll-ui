@@ -1,3 +1,5 @@
+## THIS PLUGIN IS NOW PART OF CORE AND IS NO LONGER SUPPORTED
+
 # Poll UI Plugin
 This plugin adds support for inserting a poll into the composer window via a UI.
 
